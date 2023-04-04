@@ -1,5 +1,5 @@
 
-FROM node:current-alpine3.14
+FROM node:gallium-bullseye-slim
 
 RUN mkdir /client
 
