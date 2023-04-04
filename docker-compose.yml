@@ -1,0 +1,25 @@
+services:
+  #client container
+  client:
+    container_name: patrick_client
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    networks: 
+      - nosh
+    depends_on:
+      - backend
+
+  backend:
+    container_name: patrick_backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '5001:5001'
+    networks: 
+      - nosh
+    depends_on:
+      - mongo
