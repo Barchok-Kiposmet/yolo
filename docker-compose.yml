@@ -8,7 +8,7 @@ services:
     ports:
       - '3000:3000'
     networks: 
-      - nosh
+      - client
     depends_on:
       - backend
 
@@ -20,6 +20,6 @@ services:
     ports:
       - '5001:5001'
     networks: 
-      - nosh
+      - 
     depends_on:
       - mongo
