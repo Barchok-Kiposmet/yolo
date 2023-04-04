@@ -1,13 +1,12 @@
-FROM mongo-express:latest
+FROM node:13.12.0-alpine as backend
 
-RUN mkdir /app
+LABEL version="2.0"
+LABEL description="This is backend base docker image"
+LABEL maintainer="Patrick Barchok <barchokpatrick@gmail.com>"
 
-WORKDIR /app
-
-COPY packages*.jason .
+WORKDIR /backend
+COPY . /backend
 
 RUN npm install
-
-COPY . .
-
-CMD ["npm", "start"]
+EXPOSE 5001
+CMD [ "npm", "start" ]

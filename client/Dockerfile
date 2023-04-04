@@ -5,11 +5,9 @@ RUN mkdir /client
 
 WORKDIR /client
 
-COPY package*.json .
+COPY . .
 
 RUN npm install
-
-COPY . .
 
 EXPOSE 3000
 
