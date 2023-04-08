@@ -1,12 +1,13 @@
 FROM node:13.12.0-alpine as backend
 
-LABEL version="2.0"
-LABEL description="This is backend base docker image"
-LABEL maintainer="Patrick Barchok <barchokpatrick@gmail.com>"
-
 WORKDIR /backend
-COPY . /backend
+
+COPY package.json .
 
 RUN npm install
+
+COPY . /backend
+
 EXPOSE 5001
+
 CMD [ "npm", "start" ]

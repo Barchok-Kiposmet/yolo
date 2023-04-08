@@ -1,13 +1,15 @@
 
-FROM node:gallium-bullseye-slim
+FROM node:14-alpine3.17
 
 RUN mkdir /client
 
 WORKDIR /client
 
-COPY . .
+COPY package.json .
 
 RUN npm install
+
+COPY . . 
 
 EXPOSE 3000
 
