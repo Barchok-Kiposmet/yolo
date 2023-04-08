@@ -1,16 +1,16 @@
 
-FROM node:14-alpine3.17
+FROM node:13.12.0 as build
 
-RUN mkdir /client
+WORKDIR /app
 
-WORKDIR /client
-
-COPY package.json .
+COPY  . .
 
 RUN npm install
 
-COPY . . 
+FROM node:alpine as main
+
+COPY --from=build /app /
 
 EXPOSE 3000
 
-CMD ["npm","start"]
+CMD [ "npm", "start" ]
