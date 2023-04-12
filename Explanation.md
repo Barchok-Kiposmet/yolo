@@ -29,6 +29,9 @@ Docker-compose up
 ## Instructions
 
 1. git clone <https://github.com/Barchok-Kiposmet/yolo.git>
+
 2. cd yolo
+
 3. docker-compose up --build
+
 4. Access App on <http://localhost:3000>
