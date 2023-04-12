@@ -10,6 +10,10 @@ services:
       - 3000:3000
     environment:
       PORT: 3000
+    networks:
+      - backend
+    depends-depends_on:
+      - backend
 
   backend-server:
     container_name: backend_c1
