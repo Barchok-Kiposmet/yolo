@@ -1,15 +1,13 @@
-
-FROM node:13.12.0 as build
+FROM node:13.12.0-alpine as client
 
 WORKDIR /app
 
-COPY  . .
+COPY package.json .
+COPY package-lock.json .
 
 RUN npm install
 
-FROM node:alpine as main
-
-COPY --from=build /app /
+COPY . .
 
 EXPOSE 3000
 
