@@ -1,4 +1,4 @@
-FROM node:13.12.0-alpine as client
+FROM node:13.12.0-alpine
 
 WORKDIR /app
 
@@ -9,6 +9,4 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
-
-CMD [ "npm", "start" ]d
+CMD [ "npm", "start" ]
