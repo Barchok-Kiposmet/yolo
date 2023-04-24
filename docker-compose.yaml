@@ -3,7 +3,7 @@ version: '3'
 services:
   client-server:
     container_name: client_container
-    image: pkiposmet/yolo-client-server:1.0.0
+    image: pkiposmet/yolo-client-server:1.1.0
     ports:
       - 3000:3000
     environment:
